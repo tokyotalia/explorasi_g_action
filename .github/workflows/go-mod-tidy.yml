@@ -1,0 +1,13 @@
+name: Go mod tidy check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-go@v3
+
+      - uses: katexochen/go-tidy-check@v2
+        with:
+          # (Optional) The path to the root of each modules, space separated. Default is the current directory.
+          modules: . ./module1 ./module2
+          # (Optional) Check submodules. This will use a go.work file if present, otherwise search subdirectories
+          # for go.mod files. Default is false.
+          submodules: "true"
