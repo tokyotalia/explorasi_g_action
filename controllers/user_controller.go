@@ -6,6 +6,8 @@ import (
 	"net/http"
 )
 
+this is error
+
 func GetAllUsers(w http.ResponseWriter, r *http.Request) {
 	db := connect()
 	defer db.Close()
